@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mvvm.R
 import com.example.mvvm.data.entity.Movies
@@ -24,12 +25,14 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         MainAdapter(this@MainActivity, data)
     }
 
+    // Declare the ViewModel
     private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Initialize the View Model
         viewModel =
             ViewModelProviders
                 .of(this, Injection.provideViewModelFactory(this))
@@ -38,7 +41,11 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         swipe_to_refresh_layout.setOnRefreshListener {
             fetchData()
         }
+
+        // Start observing the Live Data
         initObserver()
+
+        // Do request to API
         fetchData()
     }
 
@@ -49,13 +56,20 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         })
     }
 
+    /*
+    * showing the Data
+    * @listMovies from the observed liveData
+    * */
     private fun showDataMovie(listMovies: List<Movies>) {
         rv.setHasFixedSize(true)
-        rv.layoutManager = LinearLayoutManager(this@MainActivity)
+        rv.layoutManager = GridLayoutManager(this,2)
         adapter.updateData(listMovies)
         rv.adapter = adapter
     }
 
+    /*
+    * fetching data from Api by using viewModel
+    * */
     private fun fetchData() {
         startShimmer()
         viewModel.fetchData()
@@ -73,18 +87,27 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         swipe_to_refresh_layout.isRefreshing = false
     }
 
+    /*
+    * start the shimmer loading
+    * */
     private fun startShimmer() {
         rv.visibility = View.GONE
         shimmering_layout.visibility = View.VISIBLE
         shimmering_layout.startShimmer()
     }
 
+    /*
+    * stop the shimmer loading
+    * */
     private fun stopShimmer() {
         rv.visibility = View.VISIBLE
         shimmering_layout.stopShimmer()
         shimmering_layout.visibility = View.GONE
     }
 
+    /*
+    * handle on Pause to stop the Shimmer
+    * */
     override fun onPause() {
         super.onPause()
         stopShimmer()

@@ -19,6 +19,9 @@ class MovieRepository(private val routes: Routes) {
     * */
     val _result = MutableLiveData<List<Movies>>()
 
+    /*
+    * fetch the data from TMDB API using Retrofit
+    * */
     fun getMovies(networkListener: NetworkListener?) {
         routes.getMovies().enqueue(object : Callback<ResponseMovies> {
             override fun onResponse(call: Call<ResponseMovies>, response: Response<ResponseMovies>) {
