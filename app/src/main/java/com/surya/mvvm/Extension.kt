@@ -1,4 +1,4 @@
-package com.example.mvvm
+package com.surya.mvvm
 
 import android.content.Context
 import android.view.LayoutInflater

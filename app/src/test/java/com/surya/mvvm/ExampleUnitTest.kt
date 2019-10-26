@@ -1,4 +1,4 @@
-package com.example.mvvm
+package com.surya.mvvm
 
 import org.junit.Test
 

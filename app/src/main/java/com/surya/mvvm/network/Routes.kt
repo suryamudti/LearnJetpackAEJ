@@ -1,6 +1,6 @@
-package com.example.mvvm.network
+package com.surya.mvvm.network
 
-import com.example.mvvm.data.entity.ResponseMovies
+import com.surya.mvvm.data.entity.ResponseMovies
 import retrofit2.Call
 import retrofit2.http.GET
 

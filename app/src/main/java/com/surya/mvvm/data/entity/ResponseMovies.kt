@@ -1,4 +1,4 @@
-package com.example.mvvm.data.entity
+package com.surya.mvvm.data.entity
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

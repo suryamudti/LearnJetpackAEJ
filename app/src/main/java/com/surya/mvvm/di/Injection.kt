@@ -1,11 +1,10 @@
-package com.example.mvvm.di
+package com.surya.mvvm.di
 
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
-import com.example.mvvm.data.repository.MovieRepository
-import com.example.mvvm.network.Network
-import com.example.mvvm.network.Routes
-import com.example.mvvm.ui.ViewModelFactory
+import com.surya.mvvm.data.repository.MovieRepository
+import com.surya.mvvm.network.Network
+import com.surya.mvvm.ui.ViewModelFactory
 
 object Injection {
     fun provideRepository(): MovieRepository {

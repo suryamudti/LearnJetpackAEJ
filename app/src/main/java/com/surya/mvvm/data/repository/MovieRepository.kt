@@ -1,11 +1,10 @@
-package com.example.mvvm.data.repository
+package com.surya.mvvm.data.repository
 
 import androidx.lifecycle.MutableLiveData
-import com.example.mvvm.data.entity.Movies
-import com.example.mvvm.data.entity.ResponseMovies
-import com.example.mvvm.network.Network
-import com.example.mvvm.network.NetworkListener
-import com.example.mvvm.network.Routes
+import com.surya.mvvm.data.entity.Movies
+import com.surya.mvvm.data.entity.ResponseMovies
+import com.surya.mvvm.network.NetworkListener
+import com.surya.mvvm.network.Routes
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

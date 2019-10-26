@@ -1,13 +1,13 @@
-package com.example.mvvm.ui
+package com.surya.mvvm.ui
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mvvm.BuildConfig
-import com.example.mvvm.R
-import com.example.mvvm.data.entity.Movies
-import com.example.mvvm.displayImageOriginal
-import com.example.mvvm.inflate
+import com.surya.mvvm.BuildConfig
+import com.surya.mvvm.R
+import com.surya.mvvm.data.entity.Movies
+import com.surya.mvvm.displayImageOriginal
+import com.surya.mvvm.inflate
 import kotlinx.android.synthetic.main.item_movie.view.*
 
 class MainAdapter(private val list: ArrayList<Movies>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {

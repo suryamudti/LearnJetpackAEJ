@@ -1,6 +1,6 @@
-package com.example.mvvm.network
+package com.surya.mvvm.network
 
-import com.example.mvvm.BuildConfig
+import com.surya.mvvm.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 

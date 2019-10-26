@@ -1,8 +1,8 @@
-package com.example.mvvm.ui
+package com.surya.mvvm.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.mvvm.data.repository.MovieRepository
+import com.surya.mvvm.data.repository.MovieRepository
 
 class ViewModelFactory(private val repository: MovieRepository) : ViewModelProvider.Factory {
 

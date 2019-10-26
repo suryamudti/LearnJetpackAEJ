@@ -1,19 +1,16 @@
-package com.example.mvvm.ui
+package com.surya.mvvm.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.LinearLayout
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mvvm.R
-import com.example.mvvm.data.entity.Movies
-import com.example.mvvm.di.Injection
-import com.example.mvvm.network.NetworkListener
+import com.surya.mvvm.R
+import com.surya.mvvm.data.entity.Movies
+import com.surya.mvvm.di.Injection
+import com.surya.mvvm.network.NetworkListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.shimmer_layout.*
 
