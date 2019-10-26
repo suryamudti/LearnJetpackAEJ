@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), NetworkListener {
     private val data = arrayListOf<Movies>()
 
     private val adapter: MainAdapter by lazy {
-        MainAdapter(this@MainActivity, data)
+        MainAdapter(data)
     }
 
     // Declare the ViewModel

@@ -1,9 +1,7 @@
 package com.example.mvvm.ui
 
-import android.content.Context
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm.BuildConfig
 import com.example.mvvm.R
@@ -12,7 +10,7 @@ import com.example.mvvm.displayImageOriginal
 import com.example.mvvm.inflate
 import kotlinx.android.synthetic.main.item_movie.view.*
 
-class MainAdapter(val context: Context? = null, private val list: ArrayList<Movies>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class MainAdapter(private val list: ArrayList<Movies>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(parent.inflate(R.layout.item_movie))
