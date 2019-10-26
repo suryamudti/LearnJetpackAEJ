@@ -12,16 +12,19 @@ import retrofit2.Response
 
 class MovieRepository(private val routes: Routes) {
 
+    /*
+    * This is for initialize the data
+    * setValue() for main thread
+    * postValue() for asynchronous
+    * */
     val _result = MutableLiveData<List<Movies>>()
 
     fun getMovies(networkListener: NetworkListener?) {
         routes.getMovies().enqueue(object : Callback<ResponseMovies> {
-
             override fun onResponse(call: Call<ResponseMovies>, response: Response<ResponseMovies>) {
                 if (response.isSuccessful) {
                     networkListener?.onSuccess(response.body()?.results.toString())
                     _result.value = response.body()?.results
-
                 } else{
                     networkListener?.onFailure(response.errorBody().toString())
                 }
