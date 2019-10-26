@@ -7,6 +7,10 @@ import kotlinx.android.parcel.Parcelize
 data class ResponseMovies(
     @SerializedName("results") val results: List<Movies>)
 
+/*
+* @Parcelize
+* purpose for passing the object to another activity by intent
+* */
 @Parcelize
 data class Movies(
     val id: String,
