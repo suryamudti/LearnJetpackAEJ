@@ -25,6 +25,9 @@ inline fun View.onClicked(crossinline listener: () -> Unit) {
     setOnClickListener { listener() }
 }
 
+/**
+*  display the image in original size
+* */
 fun displayImageOriginal(context: Context, imageView: ImageView, url: String) {
     Glide.with(context)
         .load(url)
@@ -33,6 +36,9 @@ fun displayImageOriginal(context: Context, imageView: ImageView, url: String) {
         .into(imageView)
 }
 
+/**
+ *  display the image in thumbnail size
+ * */
 fun displayImageThumbnail(context: Context, imageView: ImageView, url: Any, thumb: Float) {
     Glide.with(context)
         .load(url)
@@ -42,6 +48,9 @@ fun displayImageThumbnail(context: Context, imageView: ImageView, url: Any, thum
         .into(imageView)
 }
 
+/**
+ *  display the image as size bitmap file
+ * */
 fun displayImageAsBitmap(context: Context, imageView: ImageView, url: Any) {
     Glide.with(context)
         .asBitmap()
