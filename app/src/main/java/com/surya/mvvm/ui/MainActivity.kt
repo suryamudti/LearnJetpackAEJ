@@ -16,8 +16,14 @@ import kotlinx.android.synthetic.main.shimmer_layout.*
 
 class MainActivity : AppCompatActivity(), NetworkListener {
 
+    /**
+     * initialize empty list of Movies
+     * */
     private val data = arrayListOf<Movies>()
 
+    /**
+     * adapter for Ui
+     * */
     private val adapter: MainAdapter by lazy {
         MainAdapter(data)
     }
@@ -35,6 +41,7 @@ class MainActivity : AppCompatActivity(), NetworkListener {
                 .of(this, Injection.provideViewModelFactory(this))
                 .get(MainViewModel::class.java)
 
+        // Handle onRefresh event
         swipe_to_refresh_layout.setOnRefreshListener {
             fetchData()
         }
@@ -46,6 +53,9 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         fetchData()
     }
 
+    /**
+     * initialize the observer
+     * */
     private fun initObserver() {
         viewModel.networkListener = this
         viewModel.getMovies().observe(this, Observer { listMovies ->
@@ -53,7 +63,7 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         })
     }
 
-    /*
+    /**
     * showing the Data
     * @listMovies from the observed liveData
     * */
@@ -64,7 +74,7 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         rv.adapter = adapter
     }
 
-    /*
+    /**
     * fetching data from Api by using viewModel
     * */
     private fun fetchData() {
@@ -84,7 +94,7 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         swipe_to_refresh_layout.isRefreshing = false
     }
 
-    /*
+    /**
     * start the shimmer loading
     * */
     private fun startShimmer() {
@@ -93,7 +103,7 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         shimmering_layout.startShimmer()
     }
 
-    /*
+    /**
     * stop the shimmer loading
     * */
     private fun stopShimmer() {
@@ -102,7 +112,7 @@ class MainActivity : AppCompatActivity(), NetworkListener {
         shimmering_layout.visibility = View.GONE
     }
 
-    /*
+    /**
     * handle on Pause to stop the Shimmer
     * */
     override fun onPause() {
