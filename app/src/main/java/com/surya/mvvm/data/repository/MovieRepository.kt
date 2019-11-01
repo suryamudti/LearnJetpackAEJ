@@ -11,14 +11,14 @@ import retrofit2.Response
 
 class MovieRepository(private val routes: Routes) {
 
-    /*
+    /**
     * This is for initialize the data
     * setValue() for main thread
     * postValue() for asynchronous
     * */
     val _result = MutableLiveData<List<Movies>>()
 
-    /*
+    /**
     * fetch the data from TMDB API using Retrofit
     * */
     fun getMovies(networkListener: NetworkListener?) {

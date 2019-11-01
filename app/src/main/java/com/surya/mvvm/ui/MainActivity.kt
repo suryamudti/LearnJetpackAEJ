@@ -83,7 +83,6 @@ class MainActivity : AppCompatActivity(), NetworkListener {
     }
 
     override fun onSuccess(data: String) {
-        Log.d("TAG", data)
         stopShimmer()
         swipe_to_refresh_layout.isRefreshing = false
     }

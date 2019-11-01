@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface Routes {
 
-    /*
+    /**
     * end_point base url
     * */
     @GET("discover/movie")
